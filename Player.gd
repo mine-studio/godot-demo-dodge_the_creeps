@@ -8,7 +8,7 @@ var screen_size  # Size of the game window.
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
-#	hide()
+	hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -54,3 +54,13 @@ func start(pos):
     position = pos
     show()
     $CollisionShape2D.disabled = false
+
+
+func game_over():
+	$ScoreTimer.stop()
+	$MobTimer.stop()
+	
+func new_game():
+#	score = 0
+	$Player.start($StartPosition.position)
+	$StartTimer.start()	

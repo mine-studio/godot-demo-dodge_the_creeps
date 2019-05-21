@@ -39,3 +39,5 @@ animation = "up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource( 2 )
+[connection signal="body_entered" from="Player" to="Player" method="_on_Player_body_entered"]
+[connection signal="hit" from="Player" to="Player" method="game_over"]
