@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
 [ext_resource path="res://dodge_assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
@@ -15,6 +15,12 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=3]
 size = 50
 font_data = ExtResource( 2 )
+
+[sub_resource type="InputEventAction" id=6]
+action = "ui_select"
+
+[sub_resource type="ShortCut" id=5]
+shortcut = SubResource( 6 )
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -45,6 +51,7 @@ margin_top = 355.105
 margin_right = 320.121
 margin_bottom = 434.105
 custom_fonts/font = SubResource( 3 )
+shortcut = SubResource( 5 )
 text = "Start!!"
 
 [node name="MessageTimer" type="Timer" parent="."]
