@@ -39,7 +39,7 @@ custom_fonts/font = SubResource( 2 )
 text = "Game
  Start!!"
 
-[node name="Button" type="Button" parent="."]
+[node name="StartButton" type="Button" parent="."]
 margin_left = 129.121
 margin_top = 355.105
 margin_right = 320.121
@@ -48,3 +48,7 @@ custom_fonts/font = SubResource( 3 )
 text = "Start!!"
 
 [node name="MessageTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+[connection signal="pressed" from="StartButton" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]

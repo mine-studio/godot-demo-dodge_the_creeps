@@ -14,3 +14,14 @@ func show_game_over():
 	$MessageLabel.show()
 	yield(get_tree().create_timer(1), 'timeout')
 	$StartButton.show()	
+
+func _on_MessageTimer_timeout():
+	$MessageLabel.hide()
+
+
+func _on_Button_pressed():
+	$StartButton.hide()
+	emit_signal("start_game")
+	
+func update_score(score):
+    $ScoreLabel.text = str(score)		
